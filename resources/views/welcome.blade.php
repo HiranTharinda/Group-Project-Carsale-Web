@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script src="{{ asset('js/app.js') }}"></script>
-
+  <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -75,7 +75,7 @@ $(document).ready(function(){
                                     <li><a href="#sellpage">SELL</a></li>
                                     <li><a href="#leasepage">LEASE</a></li>
                                     <li><a href="{{ route('register') }}">REGISTER</a></li>
-                                    <li><a href="{{ route('login') }}">LOGIN</a></li>
+                                    <li><a onclick="document.getElementById('modal-wrapper').style.display='block'">LOGIN</a></li>
                               </ul>
                         </div>
                   </nav>
@@ -105,6 +105,40 @@ $(document).ready(function(){
        })
 
 
+       </script>
+
+
+       <div id="modal-wrapper" class="modal">
+
+         <form class="modal-content animate" action="/action_page.php" style="width:20%; height:60%">
+
+           <div class="imgcontainer">
+             <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+             <img src="img/login.png" alt="Avatar" class="avatar">
+             <h1 style="text-align:center">Modal Popup Box</h1>
+           </div>
+
+           <div class="container">
+             <input type="text" placeholder="Enter Username" name="uname">
+             <input type="password" placeholder="Enter Password" name="psw">
+             <button type="submit">Login</button>
+             <input type="checkbox" style="margin:26px 30px;"> Remember me
+             <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+           </div>
+
+         </form>
+
+       </div>
+
+       <script>
+       // If user clicks anywhere outside of the modal, Modal will close
+
+       var modal = document.getElementById('modal-wrapper');
+       window.onclick = function(event) {
+           if (event.target == modal) {
+               modal.style.display = "none";
+           }
+       }
        </script>
 
 
@@ -155,77 +189,141 @@ $(document).ready(function(){
 
 
 
-	 <!-- Footer -->
-		<footer class="page-footer font-small blue pt-4">
 
-		  <!-- Footer Links -->
-		  <div class="container-fluid text-center text-md-left">
+		    <footer class="page-footer font-small stylish-color-dark pt-4">
 
-			<!-- Grid row -->
-			<div class="row">
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
 
-			  <!-- Grid column -->
-			  <div class="col-md-6 mt-md-0 mt-3">
+          <!-- Grid row -->
+          <div class="row">
 
-				<!-- Content -->
-				<h5 class="text-uppercase" style="font-size: 25px">C&S CAR SALE</h5>
-				<p>Fullfill all your automobile needs.</p>
+            <!-- Grid column -->
+            <div class="col-md-4 mx-auto">
 
-			  </div>
-			  <!-- Grid column -->
+              <!-- Content -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">C&S CAR SALE</h5>
+              <p>One place for all of your Automobile needs.</p>
 
-			  <hr class="clearfix w-100 d-md-none pb-3">
+            </div>
+            <!-- Grid column -->
 
-			  <!-- Grid column -->
-			  <div class="col-md-3 mb-md-0 mb-3">
+            <hr class="clearfix w-100 d-md-none">
 
-				<!-- Links -->
-				<h5 class="text-uppercase">Our Services</h5>
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto">
 
-				<ul class="list-unstyled">
-				  <li>
-					<a href="#buypage" style="color: #515151">Buy</a>
-				  </li>
-				  <li>
-					<a href="#sellpage" style="color: #515151">Sell</a>
-				  </li>
-				  <li>
-					<a href="#leasepage" style="color: #515151">Lease</a>
-				  </li>
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">OUR SERVICES</h5>
 
-				</ul>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#buypage">Buy</a>
+                </li>
+                <li>
+                  <a href="#sellpage">Sell</a>
+                </li>
+                <li>
+                  <a href="#leasepage">Lease</a>
+                </li>
+              </ul>
 
-			  </div>
-			  <!-- Grid column -->
+            </div>
+            <!-- Grid column -->
 
-			  <!-- Grid column -->
-			  <div class="col-md-3 mb-md-0 mb-3">
+            <hr class="clearfix w-100 d-md-none">
 
-				<!-- Links -->
-				<h5 class="text-uppercase">Join Us</h5>
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto">
 
-				<ul class="list-unstyled">
-				  <li>
-					<a href="#!" style="color: #515151">Register</a>
-				  </li>
-				  <li>
-					<a href="#!" style="color: #515151">Login</a>
-				  </li>
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">JOIN US</h5>
 
-				</ul>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="{{ route('register') }}">Register</a>
+                </li>
+                <li>
+                  <a href="{{ route('login') }}">Login</a>
+                </li>
 
-			  </div>
-			  <!-- Grid column -->
+              </ul>
 
-			</div>
-			<!-- Grid row -->
+            </div>
+            <!-- Grid column -->
 
-		  </div>
-		  <!-- Footer Links -->
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto">
+
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">CONTACT US</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!">About Us</a>
+                </li>
+
+              </ul>
+
+            </div>
+            <!-- Grid column -->
+
+          </div>
+          <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <hr>
+
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <h5 class="mb-1">Register for free</h5>
+          </li>
+          <li class="list-inline-item">
+            <a href="{{ route('register') }}" class="btn btn-danger btn-rounded">Sign up!</a>
+          </li>
+        </ul>
+        <!-- Call to action -->
+
+        <hr>
+
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+              <i class="fa fa-facebook"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <i class="fa fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+              <i class="fa fa-google-plus"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+              <i class="fa fa-linkedin"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1">
+              <i class="fa fa-dribbble"> </i>
+            </a>
+          </li>
+        </ul>
+        <!-- Social buttons -->
 
 
-		</footer>
-		<!-- Footer -->
+
+    </footer>
 
 	<!--Footer end-->
 

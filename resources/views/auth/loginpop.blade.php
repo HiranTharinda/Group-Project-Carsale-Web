@@ -1,9 +1,11 @@
+@extends('layouts.app')
+@section('loginpopup')
+<link href="{{ asset('css/login.css') }}" rel="stylesheet">
 
 
-@section('content')
-<link rel="stylesheet" href="Login.css">
 
 
+<div id="modal-wrapper" class="modal">
 
   <form class="modal-content animate" action="/action_page.php">
 
@@ -23,6 +25,7 @@
 
   </form>
 
+</div>
 
 <script>
 // If user clicks anywhere outside of the modal, Modal will close
